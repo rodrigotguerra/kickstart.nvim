@@ -10,7 +10,11 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup 'rodrigotguerra.plugins'
+require("lazy").setup("rodrigotguerra.plugins", {
+  change_detection = {
+    notify = false,
+  },
+})
 
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
