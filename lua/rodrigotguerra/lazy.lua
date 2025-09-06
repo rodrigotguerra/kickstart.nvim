@@ -11,6 +11,10 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("rodrigotguerra.plugins", {
+ checker = {
+    enabled = true,
+    notify = false,
+  },
   change_detection = {
     notify = false,
   },
